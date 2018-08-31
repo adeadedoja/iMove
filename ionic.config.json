@@ -1,0 +1,7 @@
+{
+  "name": "iMove",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
