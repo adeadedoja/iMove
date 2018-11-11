@@ -1,0 +1,15 @@
+page-form {
+    ion-icon {margin-right: 5px;}
+    .newlabel {padding:2px 5px; background: color($colors, secondary, base); color:#fff!important;}
+}
+.btn .button-inner{
+    justify-content: flex-start!important;
+}
+
+.btn-around .button-inner{
+    justify-content: space-between!important;
+}
+
+.form {
+    align-items: flex-end;
+}
