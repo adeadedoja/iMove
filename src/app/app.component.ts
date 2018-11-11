@@ -1,10 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 
 import { HomePage } from '../pages/home/home';
+import { SplashPage } from '../pages/splash/splash';
+import { FormPage } from '../pages/form/form';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+import { DestinationMapPage } from '../pages/destination-map/destination-map';
+import { OriginMapPage } from '../pages/origin-map/origin-map';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +18,18 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SplashPage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Splash', component: SplashPage },
+      { title: 'Login', component: LoginPage }
     ];
 
   }
@@ -40,5 +47,11 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  openModal(characterNum) {
+
+    let modal = this.modalCtrl.create(OriginMapPage, characterNum);
+    modal.present();
   }
 }

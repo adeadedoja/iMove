@@ -1,3 +1,23 @@
 page-home {
-
+    #floating-panel {
+    position: absolute;
+    bottom: 10px;
+    z-index: 5;
+    width: 100%;
+    }
+    #map {
+    height: 100%;
+    }
+    .icon {width: 20px;}
+    .hidden {display: none; }
+    b {font-weight: 600; margin-left: 5px;}
 }
+
+.home {
+    background-image: url('../assets/imgs/bg.jpg');
+}
+
+.home-grid {
+    height: 100%;
+    justify-content: flex-end;}
+
